@@ -68,7 +68,6 @@ function App() {
       return;
     }
 
-    // ✅ Step 1: Prepare data in backend format
     const payload = {
       name: formData.fullName,
       mobile_number: formData.phone,
@@ -83,7 +82,6 @@ function App() {
     };
 
     try {
-      // ✅ Step 2: Call your backend API
       const res = await fetch(" http://31.97.63.16:4006/paynow/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -96,7 +94,6 @@ function App() {
       if (data?.cashfree_response?.cashfree_response?.payment_session_id) {
         const sessionId = data.cashfree_response.cashfree_response.payment_session_id;
 
-        // ✅ Step 3: Trigger Cashfree Payment Modal
         if (window.Cashfree) {
           window.Cashfree.checkout({
           sessionId: sessionId,
