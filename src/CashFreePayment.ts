@@ -13,10 +13,8 @@ const CashFree = {
 
     const cashfree = new window.Cashfree({ mode: "sandbox" });
 
-    // For now we simulate the sessionId (frontend-only)
     const dummySessionId = "TEST_SESSION_ID_123456";
 
-    // Open Cashfree checkout popup
     cashfree.checkout({
       paymentSessionId: dummySessionId,
       redirectTarget: "_blank",
@@ -25,3 +23,4 @@ const CashFree = {
 };
 
 export default CashFree;
+
